@@ -4,7 +4,7 @@ import { Text, View, StyleSheet, Platform, StatusBar } from "react-native";
 
 import colors from "../config/colors";
 
-const StocksScreenHeader = ({ navigation }) => {
+const Header = ({ navigation, route }) => {
   console.log(navigation.constructor.name);
   const openMenu = () => {
     navigation.openDrawer();
@@ -16,13 +16,13 @@ const StocksScreenHeader = ({ navigation }) => {
         name="menu"
         size={28}
         onPress={openMenu}
-        style={{ top: 10, left: 5, ...styles.icon }}
+        style={{ top: 14, left: 5, ...styles.icon }}
       />
-      <Text style={styles.headerText}> StockCharts </Text>
+      <Text style={styles.headerText}>{route["name"]} </Text>
       <MaterialIcons
         name="settings"
         size={28}
-        style={{ top: 10, right: 5, ...styles.icon }}
+        style={{ top: 14, right: 5, ...styles.icon }}
       />
     </View>
   );
@@ -31,7 +31,7 @@ const StocksScreenHeader = ({ navigation }) => {
 const styles = StyleSheet.create({
   header: {
     width: "100%",
-    height: 50,
+    height: 60,
     backgroundColor: colors.secondary,
     flexDirection: "row",
     justifyContent: "center",
@@ -43,11 +43,11 @@ const styles = StyleSheet.create({
     fontFamily: "helvetica",
     color: colors.fifth,
     position: "absolute",
-    top: 8,
+    top: 12,
   },
   icon: {
     color: colors.fifth,
     position: "absolute",
   },
 });
-export default StocksScreenHeader;
+export default Header;
