@@ -43,8 +43,6 @@ const StocksScreen = (navigation) => {
   const [timeFrame, setTimeFrame] = useState(0);
 
   async function fetchData(time, symbol) {
-    let x_data = [];
-    let y_data = [];
     const timeSetting = ["DAILY", "WEEKLY_ADJUSTED", "MONTHLY_ADJUSTED"];
     const timeSettingKey = [
       "Time Series (Daily)",
@@ -60,11 +58,15 @@ const StocksScreen = (navigation) => {
       .then(function (data) {
         console.log(data);
         let keys = Object.keys(data[timeSettingKey[time]]);
+        let x_data = [];
+        let y_data = [];
         for (let i = 0; i < 100; i++) {
           //var split = keys[i].split("-");
           x_data[i] = keys[i]; //month[parseInt(split[1], 10) - 1];
           y_data[i] = data[timeSettingKey[time]][keys[i]]["1. open"];
         }
+        x_data = x_data.reverse();
+        y_data = y_data.reverse();
         setData({ x_data, y_data });
       })
       .catch((err) => console.log(err));
@@ -104,7 +106,7 @@ const StocksScreen = (navigation) => {
             onChangeText={(val) => {
               setSearch(val);
             }}
-            onSubmitEditing={() => {
+            onSubmitEditing={(val) => {
               console.log(`User searched for ${search}`);
               fetchData(2, search);
             }}

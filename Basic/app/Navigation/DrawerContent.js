@@ -5,27 +5,30 @@ import {
   TouchableHighlight,
   Dimensions,
   Text,
+  Image,
   ImageBackground,
+  ScrollView,
 } from "react-native";
-import {
-  DrawerContentScrollView,
-  DrawerItemList,
-} from "@react-navigation/drawer";
+import { DrawerNavigatorItems, DrawerItemList } from "@react-navigation/drawer";
 
 import colors from "../config/colors";
+
 function DrawerContent(props) {
   return (
-    <View>
-      <View>
-        <DrawerContentScrollView
-          {...props}
-          contentContainerStyle={styles.container}
-        >
-          <DrawerItemList {...props} />
-        </DrawerContentScrollView>
+    <ScrollView style={styles.ScrollView}>
+      <ImageBackground
+        source={require("../assets/violetBack.jpg")}
+        style={styles.containerImage}
+      >
+        <Image
+          source={require("../assets/Logo.png")}
+          style={styles.profilePic}
+        ></Image>
+      </ImageBackground>
+      <View style={styles.container}>
+        <DrawerItemList {...props} />
       </View>
-      <View style={styles.containerTop}></View>
-    </View>
+    </ScrollView>
   );
 }
 
@@ -33,14 +36,20 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.secondary,
-    color: "red",
   },
-  containerTop: {
-    flex: 1,
+  containerImage: {
     width: 300,
-    justifyContent: "flex-end",
-    backgroundColor: colors.primary,
-    height: "100%",
+    height: 200,
+  },
+  ScrollView: {
+    flex: 1,
+  },
+  profilePic: {
+    width: 100,
+    height: 100,
+    backgroundColor: colors.fifth,
+    top: 20,
+    left: 20,
   },
 });
 

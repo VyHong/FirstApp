@@ -16,6 +16,7 @@ function DrawerNavigation(props) {
       screenOptions={{
         drawerActiveBackgroundColor: colors.third,
         drawerLabelStyle: { color: colors.fifth },
+        drawerStyle: { width: 300 },
       }}
     >
       <Drawer.Screen
