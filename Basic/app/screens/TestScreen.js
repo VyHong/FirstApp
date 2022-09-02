@@ -3,18 +3,11 @@ import {
   StyleSheet,
   Text,
   View,
-  Image,
   TouchableHighlight,
-  Button,
   Platform,
-  Dimensions,
   StatusBar,
-  ImageBackground,
 } from "react-native";
-import {
-  useDimensions,
-  useDeviceOrientation,
-} from "@react-native-community/hooks";
+import { useDeviceOrientation } from "@react-native-community/hooks";
 
 function TestScreen({ navigation }) {
   let x = 0;

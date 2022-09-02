@@ -2,7 +2,7 @@ import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import TestScreen from "../screens/TestScreen";
-import WelcomeScreen from "../screens/WelcomeScreen";
+
 import StocksScreen from "../screens/StocksScreen";
 import Header from "./Header";
 import DrawerContent from "./DrawerContent";

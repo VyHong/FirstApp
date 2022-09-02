@@ -2,14 +2,11 @@ import React from "react";
 import {
   View,
   StyleSheet,
-  TouchableHighlight,
-  Dimensions,
-  Text,
   Image,
   ImageBackground,
   ScrollView,
 } from "react-native";
-import { DrawerNavigatorItems, DrawerItemList } from "@react-navigation/drawer";
+import { DrawerItemList } from "@react-navigation/drawer";
 
 import colors from "../config/colors";
 

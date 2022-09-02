@@ -1,21 +1,16 @@
 import {
   View,
   StyleSheet,
-  TouchableHighlight,
   Dimensions,
   Text,
-  StatusBar,
-  Platform,
   TextInput,
   Button,
 } from "react-native";
 import { LineChart } from "react-native-chart-kit";
 import React, { useState, useEffect } from "react";
-import { Ionicons } from "@expo/vector-icons";
 
 import APIkey from "../config/APIKey";
 import colors from "../config/colors";
-import StocksScreenHeader from "../Navigation/Header";
 
 const API_KEY = APIkey.APIkey;
 
